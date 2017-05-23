@@ -1,9 +1,9 @@
 diff --git a/libplatform.xcodeproj/project.pbxproj b/libplatform.xcodeproj/project.pbxproj
 new file mode 100644
-index 0000000..8bed527
+index 0000000..7f64f67
 --- /dev/null
 +++ b/libplatform.xcodeproj/project.pbxproj
-@@ -0,0 +1,689 @@
+@@ -0,0 +1,945 @@
 +// !$*UTF8*$!
 +{
 +	archiveVersion = 1;
@@ -12,77 +12,28 @@ index 0000000..8bed527
 +	objectVersion = 46;
 +	objects = {
 +
-+/* Begin PBXAggregateTarget section */
-+		1F2E2B601ED4F95900518432 /* os headers */ = {
-+			isa = PBXAggregateTarget;
-+			buildConfigurationList = 1F2E2B611ED4F95900518432 /* Build configuration list for PBXAggregateTarget "os headers" */;
-+			buildPhases = (
-+				1F2E2B641ED4F95C00518432 /* Install Public Headers */,
-+				1F2E2B671ED4F9B000518432 /* Install Private Headers */,
-+				1F2E2B6D1ED4F9CE00518432 /* Install Internal Headers */,
-+			);
-+			dependencies = (
-+			);
-+			name = "os headers";
-+			productName = "os headers";
-+		};
-+/* End PBXAggregateTarget section */
-+
 +/* Begin PBXBuildFile section */
-+		1F2E2B651ED4F9AD00518432 /* base.h in Install Public Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2AD31ED4F81200518432 /* base.h */; };
-+		1F2E2B661ED4F9AD00518432 /* lock.h in Install Public Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2AD91ED4F81200518432 /* lock.h */; };
-+		1F2E2B681ED4F9CB00518432 /* alloc_once_impl.h in Install Private Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2AD21ED4F81200518432 /* alloc_once_impl.h */; };
-+		1F2E2B691ED4F9CB00518432 /* base_private.h in Install Private Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2AD41ED4F81200518432 /* base_private.h */; };
-+		1F2E2B6A1ED4F9CB00518432 /* lock_private.h in Install Private Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2ADA1ED4F81200518432 /* lock_private.h */; };
-+		1F2E2B6B1ED4F9CB00518432 /* once_private.h in Install Private Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2ADB1ED4F81200518432 /* once_private.h */; };
-+		1F2E2B6C1ED4F9CB00518432 /* semaphore_private.h in Install Private Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2ADC1ED4F81200518432 /* semaphore_private.h */; };
-+		1F2E2B6E1ED4F9EF00518432 /* atomic.h in Install Internal Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2AD61ED4F81200518432 /* atomic.h */; };
-+		1F2E2B6F1ED4F9EF00518432 /* crashlog.h in Install Internal Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2AD71ED4F81200518432 /* crashlog.h */; };
-+		1F2E2B701ED4F9EF00518432 /* internal_shared.h in Install Internal Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2AD81ED4F81200518432 /* internal_shared.h */; };
++		1F2E2B8C1ED4FFB300518432 /* atomic.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2AD61ED4F81200518432 /* atomic.h */; settings = {ATTRIBUTES = (Private, ); }; };
++		1F2E2B8D1ED4FFB300518432 /* crashlog.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2AD71ED4F81200518432 /* crashlog.h */; settings = {ATTRIBUTES = (Private, ); }; };
++		1F2E2B8E1ED4FFB300518432 /* internal_shared.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2AD81ED4F81200518432 /* internal_shared.h */; settings = {ATTRIBUTES = (Private, ); }; };
++		1F2E2B911ED4FFBF00518432 /* alloc_once_impl.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2AD21ED4F81200518432 /* alloc_once_impl.h */; settings = {ATTRIBUTES = (Private, ); }; };
++		1F2E2B921ED4FFBF00518432 /* base.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2AD31ED4F81200518432 /* base.h */; settings = {ATTRIBUTES = (Public, ); }; };
++		1F2E2B931ED4FFBF00518432 /* base_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2AD41ED4F81200518432 /* base_private.h */; settings = {ATTRIBUTES = (Private, ); }; };
++		1F2E2B941ED4FFBF00518432 /* lock.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2AD91ED4F81200518432 /* lock.h */; settings = {ATTRIBUTES = (Public, ); }; };
++		1F2E2B951ED4FFBF00518432 /* lock_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2ADA1ED4F81200518432 /* lock_private.h */; settings = {ATTRIBUTES = (Private, ); }; };
++		1F2E2B961ED4FFBF00518432 /* once_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2ADB1ED4F81200518432 /* once_private.h */; settings = {ATTRIBUTES = (Private, ); }; };
++		1F2E2B971ED4FFBF00518432 /* semaphore_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2E2ADC1ED4F81200518432 /* semaphore_private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 +/* End PBXBuildFile section */
 +
-+/* Begin PBXCopyFilesBuildPhase section */
-+		1F2E2B641ED4F95C00518432 /* Install Public Headers */ = {
-+			isa = PBXCopyFilesBuildPhase;
-+			buildActionMask = 8;
-+			dstPath = "$(SDKROOT)/usr/include/os";
-+			dstSubfolderSpec = 0;
-+			files = (
-+				1F2E2B651ED4F9AD00518432 /* base.h in Install Public Headers */,
-+				1F2E2B661ED4F9AD00518432 /* lock.h in Install Public Headers */,
-+			);
-+			name = "Install Public Headers";
-+			runOnlyForDeploymentPostprocessing = 1;
++/* Begin PBXContainerItemProxy section */
++		1F2E2B8F1ED4FFB900518432 /* PBXContainerItemProxy */ = {
++			isa = PBXContainerItemProxy;
++			containerPortal = 1F2E2AC31ED4F80200518432 /* Project object */;
++			proxyType = 1;
++			remoteGlobalIDString = 1F2E2B871ED4FFA300518432;
++			remoteInfo = "os_internal headers";
 +		};
-+		1F2E2B671ED4F9B000518432 /* Install Private Headers */ = {
-+			isa = PBXCopyFilesBuildPhase;
-+			buildActionMask = 8;
-+			dstPath = "$(SDKROOT)/usr/local/include/os";
-+			dstSubfolderSpec = 0;
-+			files = (
-+				1F2E2B681ED4F9CB00518432 /* alloc_once_impl.h in Install Private Headers */,
-+				1F2E2B691ED4F9CB00518432 /* base_private.h in Install Private Headers */,
-+				1F2E2B6A1ED4F9CB00518432 /* lock_private.h in Install Private Headers */,
-+				1F2E2B6B1ED4F9CB00518432 /* once_private.h in Install Private Headers */,
-+				1F2E2B6C1ED4F9CB00518432 /* semaphore_private.h in Install Private Headers */,
-+			);
-+			name = "Install Private Headers";
-+			runOnlyForDeploymentPostprocessing = 1;
-+		};
-+		1F2E2B6D1ED4F9CE00518432 /* Install Internal Headers */ = {
-+			isa = PBXCopyFilesBuildPhase;
-+			buildActionMask = 8;
-+			dstPath = "$(SDKROOT)/usr/local/include/os/internal";
-+			dstSubfolderSpec = 0;
-+			files = (
-+				1F2E2B6E1ED4F9EF00518432 /* atomic.h in Install Internal Headers */,
-+				1F2E2B6F1ED4F9EF00518432 /* crashlog.h in Install Internal Headers */,
-+				1F2E2B701ED4F9EF00518432 /* internal_shared.h in Install Internal Headers */,
-+			);
-+			name = "Install Internal Headers";
-+			runOnlyForDeploymentPostprocessing = 1;
-+		};
-+/* End PBXCopyFilesBuildPhase section */
++/* End PBXContainerItemProxy section */
 +
 +/* Begin PBXFileReference section */
 +		1F2E2ACA1ED4F81200518432 /* _simple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _simple.h; sourceTree = "<group>"; };
@@ -190,7 +141,26 @@ index 0000000..8bed527
 +		1F2E2B541ED4F81200518432 /* os.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = os.xcconfig; sourceTree = "<group>"; };
 +		1F2E2B551ED4F81200518432 /* perarch.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = perarch.xcconfig; sourceTree = "<group>"; };
 +		1F2E2B561ED4F81200518432 /* static.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = static.xcconfig; sourceTree = "<group>"; };
++		1F2E2B801ED4FF8300518432 /* libos headers.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libos headers.a"; sourceTree = BUILT_PRODUCTS_DIR; };
++		1F2E2B881ED4FFA300518432 /* libos_internal headers.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libos_internal headers.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 +/* End PBXFileReference section */
++
++/* Begin PBXFrameworksBuildPhase section */
++		1F2E2B7D1ED4FF8300518432 /* Frameworks */ = {
++			isa = PBXFrameworksBuildPhase;
++			buildActionMask = 2147483647;
++			files = (
++			);
++			runOnlyForDeploymentPostprocessing = 0;
++		};
++		1F2E2B851ED4FFA300518432 /* Frameworks */ = {
++			isa = PBXFrameworksBuildPhase;
++			buildActionMask = 2147483647;
++			files = (
++			);
++			runOnlyForDeploymentPostprocessing = 0;
++		};
++/* End PBXFrameworksBuildPhase section */
 +
 +/* Begin PBXGroup section */
 +		1F2E2AC21ED4F80200518432 = {
@@ -604,11 +574,78 @@ index 0000000..8bed527
 +		1F2E2B5C1ED4F8EA00518432 /* Products */ = {
 +			isa = PBXGroup;
 +			children = (
++				1F2E2B801ED4FF8300518432 /* libos headers.a */,
++				1F2E2B881ED4FFA300518432 /* libos_internal headers.a */,
 +			);
 +			name = Products;
 +			sourceTree = "<group>";
 +		};
 +/* End PBXGroup section */
++
++/* Begin PBXHeadersBuildPhase section */
++		1F2E2B7E1ED4FF8300518432 /* Headers */ = {
++			isa = PBXHeadersBuildPhase;
++			buildActionMask = 2147483647;
++			files = (
++				1F2E2B921ED4FFBF00518432 /* base.h in Headers */,
++				1F2E2B941ED4FFBF00518432 /* lock.h in Headers */,
++				1F2E2B911ED4FFBF00518432 /* alloc_once_impl.h in Headers */,
++				1F2E2B931ED4FFBF00518432 /* base_private.h in Headers */,
++				1F2E2B951ED4FFBF00518432 /* lock_private.h in Headers */,
++				1F2E2B961ED4FFBF00518432 /* once_private.h in Headers */,
++				1F2E2B971ED4FFBF00518432 /* semaphore_private.h in Headers */,
++			);
++			runOnlyForDeploymentPostprocessing = 0;
++		};
++		1F2E2B861ED4FFA300518432 /* Headers */ = {
++			isa = PBXHeadersBuildPhase;
++			buildActionMask = 2147483647;
++			files = (
++				1F2E2B8C1ED4FFB300518432 /* atomic.h in Headers */,
++				1F2E2B8D1ED4FFB300518432 /* crashlog.h in Headers */,
++				1F2E2B8E1ED4FFB300518432 /* internal_shared.h in Headers */,
++			);
++			runOnlyForDeploymentPostprocessing = 0;
++		};
++/* End PBXHeadersBuildPhase section */
++
++/* Begin PBXNativeTarget section */
++		1F2E2B7F1ED4FF8300518432 /* os headers */ = {
++			isa = PBXNativeTarget;
++			buildConfigurationList = 1F2E2B811ED4FF8300518432 /* Build configuration list for PBXNativeTarget "os headers" */;
++			buildPhases = (
++				1F2E2B7C1ED4FF8300518432 /* Sources */,
++				1F2E2B7D1ED4FF8300518432 /* Frameworks */,
++				1F2E2B7E1ED4FF8300518432 /* Headers */,
++			);
++			buildRules = (
++			);
++			dependencies = (
++				1F2E2B901ED4FFB900518432 /* PBXTargetDependency */,
++			);
++			name = "os headers";
++			productName = "os headers";
++			productReference = 1F2E2B801ED4FF8300518432 /* libos headers.a */;
++			productType = "com.apple.product-type.library.static";
++		};
++		1F2E2B871ED4FFA300518432 /* os_internal headers */ = {
++			isa = PBXNativeTarget;
++			buildConfigurationList = 1F2E2B891ED4FFA300518432 /* Build configuration list for PBXNativeTarget "os_internal headers" */;
++			buildPhases = (
++				1F2E2B841ED4FFA300518432 /* Sources */,
++				1F2E2B851ED4FFA300518432 /* Frameworks */,
++				1F2E2B861ED4FFA300518432 /* Headers */,
++			);
++			buildRules = (
++			);
++			dependencies = (
++			);
++			name = "os_internal headers";
++			productName = "os_internal headers";
++			productReference = 1F2E2B881ED4FFA300518432 /* libos_internal headers.a */;
++			productType = "com.apple.product-type.library.static";
++		};
++/* End PBXNativeTarget section */
 +
 +/* Begin PBXProject section */
 +		1F2E2AC31ED4F80200518432 /* Project object */ = {
@@ -616,7 +653,12 @@ index 0000000..8bed527
 +			attributes = {
 +				LastUpgradeCheck = 0830;
 +				TargetAttributes = {
-+					1F2E2B601ED4F95900518432 = {
++					1F2E2B7F1ED4FF8300518432 = {
++						CreatedOnToolsVersion = 8.3.2;
++						DevelopmentTeam = 3P242C9ES5;
++						ProvisioningStyle = Automatic;
++					};
++					1F2E2B871ED4FFA300518432 = {
 +						CreatedOnToolsVersion = 8.3.2;
 +						DevelopmentTeam = 3P242C9ES5;
 +						ProvisioningStyle = Automatic;
@@ -635,10 +677,36 @@ index 0000000..8bed527
 +			projectDirPath = "";
 +			projectRoot = "";
 +			targets = (
-+				1F2E2B601ED4F95900518432 /* os headers */,
++				1F2E2B7F1ED4FF8300518432 /* os headers */,
++				1F2E2B871ED4FFA300518432 /* os_internal headers */,
 +			);
 +		};
 +/* End PBXProject section */
++
++/* Begin PBXSourcesBuildPhase section */
++		1F2E2B7C1ED4FF8300518432 /* Sources */ = {
++			isa = PBXSourcesBuildPhase;
++			buildActionMask = 2147483647;
++			files = (
++			);
++			runOnlyForDeploymentPostprocessing = 0;
++		};
++		1F2E2B841ED4FFA300518432 /* Sources */ = {
++			isa = PBXSourcesBuildPhase;
++			buildActionMask = 2147483647;
++			files = (
++			);
++			runOnlyForDeploymentPostprocessing = 0;
++		};
++/* End PBXSourcesBuildPhase section */
++
++/* Begin PBXTargetDependency section */
++		1F2E2B901ED4FFB900518432 /* PBXTargetDependency */ = {
++			isa = PBXTargetDependency;
++			target = 1F2E2B871ED4FFA300518432 /* os_internal headers */;
++			targetProxy = 1F2E2B8F1ED4FFB900518432 /* PBXContainerItemProxy */;
++		};
++/* End PBXTargetDependency section */
 +
 +/* Begin XCBuildConfiguration section */
 +		1F2E2AC71ED4F80200518432 /* Debug */ = {
@@ -653,19 +721,199 @@ index 0000000..8bed527
 +			};
 +			name = Release;
 +		};
-+		1F2E2B621ED4F95900518432 /* Debug */ = {
++		1F2E2B821ED4FF8300518432 /* Debug */ = {
 +			isa = XCBuildConfiguration;
 +			buildSettings = {
++				ALWAYS_SEARCH_USER_PATHS = NO;
++				CLANG_ANALYZER_NONNULL = YES;
++				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
++				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
++				CLANG_CXX_LIBRARY = "libc++";
++				CLANG_ENABLE_MODULES = YES;
++				CLANG_ENABLE_OBJC_ARC = YES;
++				CLANG_WARN_BOOL_CONVERSION = YES;
++				CLANG_WARN_CONSTANT_CONVERSION = YES;
++				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
++				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
++				CLANG_WARN_EMPTY_BODY = YES;
++				CLANG_WARN_ENUM_CONVERSION = YES;
++				CLANG_WARN_INFINITE_RECURSION = YES;
++				CLANG_WARN_INT_CONVERSION = YES;
++				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
++				CLANG_WARN_SUSPICIOUS_MOVE = YES;
++				CLANG_WARN_UNREACHABLE_CODE = YES;
++				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
++				CODE_SIGN_IDENTITY = "-";
++				COPY_PHASE_STRIP = NO;
++				DEBUG_INFORMATION_FORMAT = dwarf;
 +				DEVELOPMENT_TEAM = 3P242C9ES5;
++				ENABLE_STRICT_OBJC_MSGSEND = YES;
++				ENABLE_TESTABILITY = YES;
++				EXECUTABLE_PREFIX = lib;
++				GCC_C_LANGUAGE_STANDARD = gnu99;
++				GCC_DYNAMIC_NO_PIC = NO;
++				GCC_NO_COMMON_BLOCKS = YES;
++				GCC_OPTIMIZATION_LEVEL = 0;
++				GCC_PREPROCESSOR_DEFINITIONS = (
++					"DEBUG=1",
++					"$(inherited)",
++				);
++				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
++				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
++				GCC_WARN_UNDECLARED_SELECTOR = YES;
++				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
++				GCC_WARN_UNUSED_FUNCTION = YES;
++				GCC_WARN_UNUSED_VARIABLE = YES;
++				MACOSX_DEPLOYMENT_TARGET = 10.12;
++				MTL_ENABLE_DEBUG_INFO = YES;
++				ONLY_ACTIVE_ARCH = YES;
++				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include/os;
 +				PRODUCT_NAME = "$(TARGET_NAME)";
++				PUBLIC_HEADERS_FOLDER_PATH = /usr/include/os;
++				SDKROOT = macosx;
 +			};
 +			name = Debug;
 +		};
-+		1F2E2B631ED4F95900518432 /* Release */ = {
++		1F2E2B831ED4FF8300518432 /* Release */ = {
 +			isa = XCBuildConfiguration;
 +			buildSettings = {
++				ALWAYS_SEARCH_USER_PATHS = NO;
++				CLANG_ANALYZER_NONNULL = YES;
++				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
++				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
++				CLANG_CXX_LIBRARY = "libc++";
++				CLANG_ENABLE_MODULES = YES;
++				CLANG_ENABLE_OBJC_ARC = YES;
++				CLANG_WARN_BOOL_CONVERSION = YES;
++				CLANG_WARN_CONSTANT_CONVERSION = YES;
++				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
++				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
++				CLANG_WARN_EMPTY_BODY = YES;
++				CLANG_WARN_ENUM_CONVERSION = YES;
++				CLANG_WARN_INFINITE_RECURSION = YES;
++				CLANG_WARN_INT_CONVERSION = YES;
++				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
++				CLANG_WARN_SUSPICIOUS_MOVE = YES;
++				CLANG_WARN_UNREACHABLE_CODE = YES;
++				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
++				CODE_SIGN_IDENTITY = "-";
++				COPY_PHASE_STRIP = NO;
++				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 +				DEVELOPMENT_TEAM = 3P242C9ES5;
++				ENABLE_NS_ASSERTIONS = NO;
++				ENABLE_STRICT_OBJC_MSGSEND = YES;
++				EXECUTABLE_PREFIX = lib;
++				GCC_C_LANGUAGE_STANDARD = gnu99;
++				GCC_NO_COMMON_BLOCKS = YES;
++				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
++				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
++				GCC_WARN_UNDECLARED_SELECTOR = YES;
++				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
++				GCC_WARN_UNUSED_FUNCTION = YES;
++				GCC_WARN_UNUSED_VARIABLE = YES;
++				MACOSX_DEPLOYMENT_TARGET = 10.12;
++				MTL_ENABLE_DEBUG_INFO = NO;
++				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include/os;
 +				PRODUCT_NAME = "$(TARGET_NAME)";
++				PUBLIC_HEADERS_FOLDER_PATH = /usr/include/os;
++				SDKROOT = macosx;
++			};
++			name = Release;
++		};
++		1F2E2B8A1ED4FFA300518432 /* Debug */ = {
++			isa = XCBuildConfiguration;
++			buildSettings = {
++				ALWAYS_SEARCH_USER_PATHS = NO;
++				CLANG_ANALYZER_NONNULL = YES;
++				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
++				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
++				CLANG_CXX_LIBRARY = "libc++";
++				CLANG_ENABLE_MODULES = YES;
++				CLANG_ENABLE_OBJC_ARC = YES;
++				CLANG_WARN_BOOL_CONVERSION = YES;
++				CLANG_WARN_CONSTANT_CONVERSION = YES;
++				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
++				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
++				CLANG_WARN_EMPTY_BODY = YES;
++				CLANG_WARN_ENUM_CONVERSION = YES;
++				CLANG_WARN_INFINITE_RECURSION = YES;
++				CLANG_WARN_INT_CONVERSION = YES;
++				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
++				CLANG_WARN_SUSPICIOUS_MOVE = YES;
++				CLANG_WARN_UNREACHABLE_CODE = YES;
++				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
++				CODE_SIGN_IDENTITY = "-";
++				COPY_PHASE_STRIP = NO;
++				DEBUG_INFORMATION_FORMAT = dwarf;
++				DEVELOPMENT_TEAM = 3P242C9ES5;
++				ENABLE_STRICT_OBJC_MSGSEND = YES;
++				ENABLE_TESTABILITY = YES;
++				EXECUTABLE_PREFIX = lib;
++				GCC_C_LANGUAGE_STANDARD = gnu99;
++				GCC_DYNAMIC_NO_PIC = NO;
++				GCC_NO_COMMON_BLOCKS = YES;
++				GCC_OPTIMIZATION_LEVEL = 0;
++				GCC_PREPROCESSOR_DEFINITIONS = (
++					"DEBUG=1",
++					"$(inherited)",
++				);
++				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
++				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
++				GCC_WARN_UNDECLARED_SELECTOR = YES;
++				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
++				GCC_WARN_UNUSED_FUNCTION = YES;
++				GCC_WARN_UNUSED_VARIABLE = YES;
++				MACOSX_DEPLOYMENT_TARGET = 10.12;
++				MTL_ENABLE_DEBUG_INFO = YES;
++				ONLY_ACTIVE_ARCH = YES;
++				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include/os/internal;
++				PRODUCT_NAME = "$(TARGET_NAME)";
++				SDKROOT = macosx;
++			};
++			name = Debug;
++		};
++		1F2E2B8B1ED4FFA300518432 /* Release */ = {
++			isa = XCBuildConfiguration;
++			buildSettings = {
++				ALWAYS_SEARCH_USER_PATHS = NO;
++				CLANG_ANALYZER_NONNULL = YES;
++				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
++				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
++				CLANG_CXX_LIBRARY = "libc++";
++				CLANG_ENABLE_MODULES = YES;
++				CLANG_ENABLE_OBJC_ARC = YES;
++				CLANG_WARN_BOOL_CONVERSION = YES;
++				CLANG_WARN_CONSTANT_CONVERSION = YES;
++				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
++				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
++				CLANG_WARN_EMPTY_BODY = YES;
++				CLANG_WARN_ENUM_CONVERSION = YES;
++				CLANG_WARN_INFINITE_RECURSION = YES;
++				CLANG_WARN_INT_CONVERSION = YES;
++				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
++				CLANG_WARN_SUSPICIOUS_MOVE = YES;
++				CLANG_WARN_UNREACHABLE_CODE = YES;
++				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
++				CODE_SIGN_IDENTITY = "-";
++				COPY_PHASE_STRIP = NO;
++				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
++				DEVELOPMENT_TEAM = 3P242C9ES5;
++				ENABLE_NS_ASSERTIONS = NO;
++				ENABLE_STRICT_OBJC_MSGSEND = YES;
++				EXECUTABLE_PREFIX = lib;
++				GCC_C_LANGUAGE_STANDARD = gnu99;
++				GCC_NO_COMMON_BLOCKS = YES;
++				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
++				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
++				GCC_WARN_UNDECLARED_SELECTOR = YES;
++				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
++				GCC_WARN_UNUSED_FUNCTION = YES;
++				GCC_WARN_UNUSED_VARIABLE = YES;
++				MACOSX_DEPLOYMENT_TARGET = 10.12;
++				MTL_ENABLE_DEBUG_INFO = NO;
++				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include/os/internal;
++				PRODUCT_NAME = "$(TARGET_NAME)";
++				SDKROOT = macosx;
 +			};
 +			name = Release;
 +		};
@@ -681,11 +929,19 @@ index 0000000..8bed527
 +			defaultConfigurationIsVisible = 0;
 +			defaultConfigurationName = Release;
 +		};
-+		1F2E2B611ED4F95900518432 /* Build configuration list for PBXAggregateTarget "os headers" */ = {
++		1F2E2B811ED4FF8300518432 /* Build configuration list for PBXNativeTarget "os headers" */ = {
 +			isa = XCConfigurationList;
 +			buildConfigurations = (
-+				1F2E2B621ED4F95900518432 /* Debug */,
-+				1F2E2B631ED4F95900518432 /* Release */,
++				1F2E2B821ED4FF8300518432 /* Debug */,
++				1F2E2B831ED4FF8300518432 /* Release */,
++			);
++			defaultConfigurationIsVisible = 0;
++		};
++		1F2E2B891ED4FFA300518432 /* Build configuration list for PBXNativeTarget "os_internal headers" */ = {
++			isa = XCConfigurationList;
++			buildConfigurations = (
++				1F2E2B8A1ED4FFA300518432 /* Debug */,
++				1F2E2B8B1ED4FFA300518432 /* Release */,
 +			);
 +			defaultConfigurationIsVisible = 0;
 +		};
