@@ -1,0 +1,13 @@
+Binary files ../libdispatch-703.50.37.orig/libdispatch.xcodeproj/project.xcworkspace/xcuserdata/wjk.xcuserdatad/UserInterfaceState.xcuserstate and ./libdispatch.xcodeproj/project.xcworkspace/xcuserdata/wjk.xcuserdatad/UserInterfaceState.xcuserstate differ
+diff -u -r ../libdispatch-703.50.37.orig/xcodeconfig/libfirehose_kernel.xcconfig ./xcodeconfig/libfirehose_kernel.xcconfig
+--- ../libdispatch-703.50.37.orig/xcodeconfig/libfirehose_kernel.xcconfig	2017-05-23 18:34:44.000000000 -0400
++++ ./xcodeconfig/libfirehose_kernel.xcconfig	2017-05-23 18:35:43.000000000 -0400
+@@ -27,7 +27,7 @@
+ PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include/kernel/os
+ SUPPORTED_PLATFORMS = macosx iphoneos appletvos watchos
+ 
+-HEADER_SEARCH_PATHS = $(PROJECT_DIR) $(SDKROOT)/System/Library/Frameworks/Kernel.framework/PrivateHeaders $(SDKROOT)/System/Library/Frameworks/Kernel.framework/Headers $(SDKROOT)/usr/local/include/os $(SDKROOT)/usr/local/include/firehose
++HEADER_SEARCH_PATHS = $(PROJECT_DIR) /System/Library/Frameworks/Kernel.framework/PrivateHeaders $(SDKROOT)/System/Library/Frameworks/Kernel.framework/Headers /usr/local/include/os /usr/local/include/firehose
+ 
+ GCC_PREPROCESSOR_DEFINITIONS = $(inherited) KERNEL=1 DISPATCH_USE_DTRACE=0
+ 
