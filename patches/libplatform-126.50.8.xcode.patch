@@ -1,9 +1,9 @@
 diff --git a/libplatform.xcodeproj/project.pbxproj b/libplatform.xcodeproj/project.pbxproj
 new file mode 100644
-index 0000000..807de64
+index 0000000..8bed527
 --- /dev/null
 +++ b/libplatform.xcodeproj/project.pbxproj
-@@ -0,0 +1,691 @@
+@@ -0,0 +1,689 @@
 +// !$*UTF8*$!
 +{
 +	archiveVersion = 1;
@@ -45,7 +45,7 @@ index 0000000..807de64
 +		1F2E2B641ED4F95C00518432 /* Install Public Headers */ = {
 +			isa = PBXCopyFilesBuildPhase;
 +			buildActionMask = 8;
-+			dstPath = "$(PD_SDKROOT)/usr/include/os";
++			dstPath = "$(SDKROOT)/usr/include/os";
 +			dstSubfolderSpec = 0;
 +			files = (
 +				1F2E2B651ED4F9AD00518432 /* base.h in Install Public Headers */,
@@ -57,7 +57,7 @@ index 0000000..807de64
 +		1F2E2B671ED4F9B000518432 /* Install Private Headers */ = {
 +			isa = PBXCopyFilesBuildPhase;
 +			buildActionMask = 8;
-+			dstPath = "$(PD_SDKROOT)/usr/local/include/os";
++			dstPath = "$(SDKROOT)/usr/local/include/os";
 +			dstSubfolderSpec = 0;
 +			files = (
 +				1F2E2B681ED4F9CB00518432 /* alloc_once_impl.h in Install Private Headers */,
@@ -72,7 +72,7 @@ index 0000000..807de64
 +		1F2E2B6D1ED4F9CE00518432 /* Install Internal Headers */ = {
 +			isa = PBXCopyFilesBuildPhase;
 +			buildActionMask = 8;
-+			dstPath = "$(PD_SDKROOT)/usr/local/include/os/internal";
++			dstPath = "$(SDKROOT)/usr/local/include/os/internal";
 +			dstSubfolderSpec = 0;
 +			files = (
 +				1F2E2B6E1ED4F9EF00518432 /* atomic.h in Install Internal Headers */,
@@ -644,14 +644,12 @@ index 0000000..807de64
 +		1F2E2AC71ED4F80200518432 /* Debug */ = {
 +			isa = XCBuildConfiguration;
 +			buildSettings = {
-+				PD_SDKROOT = "$(SDK_DIR)/../PureDarwin.sdk";
 +			};
 +			name = Debug;
 +		};
 +		1F2E2AC81ED4F80200518432 /* Release */ = {
 +			isa = XCBuildConfiguration;
 +			buildSettings = {
-+				PD_SDKROOT = "$(SDK_DIR)/../PureDarwin.sdk";
 +			};
 +			name = Release;
 +		};
