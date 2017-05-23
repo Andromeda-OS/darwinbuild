@@ -51,3 +51,13 @@ do_ditto /Applications/Xcode.app/Contents/Developer/Tools
 do_ditto /Applications/Xcode.app/Contents/Developer/usr
 
 do_ditto /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform
+ditto /Applications/Xcode.app/Contents/Info.plist $BUILDROOT/Applications/Xcode.app/Contents
+ditto /Applications/Xcode.app/Contents/version.plist $BUILDROOT/Applications/Xcode.app/Contents
+
+mkdir -p $BUILDROOT/System/Library/CoreServices
+ditto /System/Library/CoreServices/SystemVersion.plist $BUILDROOT/System/Library/CoreServices
+
+# Create extra directories required by the Xcode tools.
+# While not strictly part of Xcode, without them the tools will crash.
+mkdir -p $BUILDROOT/Users/$(whoami)
+mkdir -p $BUILDROOT/$TMPDIR
