@@ -641,7 +641,9 @@ if [ "$NEED_ROOTS" == "YES" -a "$noload" != "YES" ]; then
 	deps=$($DARWINXREF dependencies -build "$projnam")
 
 	for X in $deps ; do
-		InstallRoot "$BuildRoot" "$X" "$depsbuild"
+		if [ "$action" != "installhdrs" ]; then
+			InstallRoot "$BuildRoot" "$X" "$depsbuild"
+		fi
 	done
 
 	echo "*** Installing Headers ..."
