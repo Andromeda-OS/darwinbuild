@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+group_name = ARGV[1]
+groups = `darwinxref group #{group_name}`.chomp.split("\n")
+
+groups.each do |group|
+    group.split(' ').each do |project|
+        project_name = project.split(':')[0]
+        project_type = project.split(':')[1]
+
+        action = nil
+        if project_type == 'header'
+            action = '-headers'
+        elsif project_type != 'build'
+            STDERR.puts "unrecognized build action #{project_type}"
+        end
+
+        argv = ['darwinbuild']
+        argv << action if action != nil
+        argv << project_name
+        system *argv
+
+        if $?.exitstatus != 0
+            action_string = ''
+            action_string = action + ' ' if action != nil
+            abort "darwinbuild #{action_string}#{project_name} failed with code #{$?.exitstatus}"
+        end
+    end
+end
