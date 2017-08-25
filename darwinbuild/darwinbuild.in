@@ -462,6 +462,13 @@ if [ "$nosource" != "YES" ]; then
 		Download "$SourceCache" "$filename" "$($DARWINXREF source_sites $projnam)"
 	fi
 
+	if [ ! -f "$SourceCache/$filename" ]; then
+		github_projname=$(echo $filename | sed -e 's,-.*$,,')
+		github_projversion=$(echo $filename | sed -e 's,\.tar\.gz$,,' | sed -e 's,^.*-,,')
+		github_dxref_plist=.build/$($DARWINXREF currentBuild).plist
+		$DATADIR/fetch-from-github "$github_dxref_plist" $github_projname $github_projversion "$SourceCache"
+	fi
+
 	patchfilenames=$($DARWINXREF patchfiles $projnam)
 	for p in $patchfilenames; do
 		Download "$SourceCache" "$p" "$($DARWINXREF patch_sites $projnam)"
@@ -595,27 +602,11 @@ if [ -n "$numfiles" ]; then
     	export INSTALL_XCODE="YES"
 else
 	buildtool="make"
-
-	# test for hybrid make-xcode project
-	uses_xcrun=$(grep -Elir 'xcodebuild|xcrun|Commands.make|BSDCommon.make|Standard.make|Common.make' .)
-	if [ -n "$uses_xcrun" -a $USE_CHROOT == "YES" ]; then
-		export INSTALL_XCODE="YES"
-	fi
 fi
 
 
 receipts="$BuildRoot/usr/local/darwinbuild/receipts"
 mkdir -p "$receipts"
-
-### xcodebuild is a special case because it is not open source
-### we try to integrate the host copy of Xcode if required
-if [ $INSTALL_XCODE == "YES" ]; then
-	if [ ! -f "$receipts/xcodebuild" ]; then
-		echo "*** Installing Xcode Tools ..."
-		"$DATADIR/installXcode" "$BuildRoot" "$PWDP"
-		touch "$receipts/xcodebuild"
-	fi
-fi
 
 ###
 ### If we are going to build in a chroot,
@@ -656,6 +647,12 @@ if [ "$NEED_ROOTS" == "YES" -a "$noload" != "YES" ]; then
 	    exit
 	fi
 
+fi
+
+if [ ! -f "$receipts/xcodebuild" ]; then
+	echo "*** Installing Xcode Tools ..."
+	"$DATADIR/installXcode" "$BuildRoot" "$PWDP"
+	touch "$receipts/xcodebuild"
 fi
 
 ###
