@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+
+from __future__ import print_function
+import sys
+import os
+import subprocess
+import tarfile
+
+if len(sys.argv) < 3:
+    print('usage: make-tarball.py /path/to/output project-version', file=sys.stderr)
+    exit(1)
+
+outdir = sys.argv[1]
+project_and_version = sys.argv[2]
+
+ls_files = subprocess.Popen(['git', 'ls-files'], stdout=subprocess.PIPE, universal_newlines = True)
+(stdout, _) = ls_files.communicate()
+if ls_files.returncode != 0:
+    print('git ls-files failed with code', ls_files.returncode, file=sys.stderr)
+    exit(1)
+
+all_files = stdout.decode('utf-8').split('\n')
+tarball = tarfile.open(os.path.join(outdir, project_and_version + '.tar.gz'), 'w:gz')
+
+counter = 0
+for filename in all_files:
+    if filename == '': continue
+
+    counter += 1
+    if (counter % 1000) == 0:
+        print('Processed', counter, 'files...')
+
+    tarball.add(filename, os.path.join(project_and_version, filename))
+
+tarball.close()
