@@ -139,7 +139,7 @@ if [ "$1" == "-init" ]; then
 		# user gave a local path to a plist
 		# since we don't want to download this, copy it
 		cp "$build" ".build/$filename"
-	elif [ $(echo $build | grep 'http://') ]; then
+	elif [ $(echo $build | egrep 'https?://') ]; then
 		# user gave a URL to a webserver
 		host=$(dirname $build)
 		Download .build $filename $host
@@ -198,7 +198,6 @@ EOF
 ###
 CheckDarwinBuildRoot
 BuildRoot="$DARWIN_BUILDROOT/BuildRoot"
-BuildRoot=$(realpath "$BuildRoot")
 export DARWINXREF_DB_FILE="$DARWIN_BUILDROOT/$XREFDB"
 
 ###
@@ -214,6 +213,8 @@ if [ -d $DMGFILE ]; then
 	    exit 70
 	fi
     fi
+
+    BuildRoot=$(cd "$BuildRoot" && pwd -P)
 fi
 
 ###
